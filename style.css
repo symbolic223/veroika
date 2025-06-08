@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #00c8c8, #5865F2);
+    color: white;
+    overflow-x: hidden;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.header img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeSlideDown 1s ease-out forwards;
+    border-radius: 50%;
+}
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+@keyframes fadeSlideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 {
+    font-size: 4rem;
+    max-width: 90%;
+}
+
+.btn {
+    background-color: #5865F2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: #404EED;
+}
+
+.main {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    object-fit: cover;
+    z-index: 0;
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 10%, transparent 100%);
+    transition: opacity 1s ease;
+}
+
+.main.visible img {
+    opacity: 1;
+}
+
+.main h1 {
+    margin-left: auto;
+    margin-right: 50px;
+    z-index: 1;
+}
+
+.events {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.events img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    object-fit: cover;
+    z-index: 0;
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 10%, transparent 100%);
+    transition: opacity 1s ease;
+}
+
+.events.visible img {
+    opacity: 1;
+}
+
+.events h1 {
+    margin-right: auto;
+    margin-left: 50px;
+    z-index: 1;
+}
